@@ -4,12 +4,23 @@ function App () {
   const [message, setMessage] = useState('')
 
   return (
-    <form onSubmit={console.log('done')}>
-      <label>
-        Name:
-        <input type='text' value={message} onChange={e => setMessage(e.target.value)}/>
-      </label>
-      <input type='submit' value='Submit' />
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+        console.log(
+          'action: addMessage with payload: ' + message + 'to Redux store'
+        )
+      }}
+    >
+
+      Message:
+      <input
+        type='text'
+        value={message}
+        onChange={e => setMessage(e.target.value)}
+      />
+
+      <input type='submit' value='Send Message' />
     </form>
   )
 }
