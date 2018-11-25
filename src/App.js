@@ -8,8 +8,9 @@ function App () {
       onSubmit={e => {
         e.preventDefault()
         console.log(
-          'action: addMessage with payload: ' + message + 'to Redux store'
+          'action: addMessage with payload: ' + message + ' to Redux store'
         )
+        setMessage('')
       }}
     >
 
